@@ -9,10 +9,17 @@ li {
 }
 header {
   display: flex;
-  /* justify-content: space-around; */
+  justify-content: space-around;
+  align-items: center;
+}
+#logo {
+  flex: 1;
+}
+nav {
+  flex: 3;
 }
 nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
