@@ -1,4 +1,9 @@
 .App {
   font-family: sans-serif;
-  text-align: center;
+}
+h1 {
+  color: #743811;
+}
+li {
+  list-style: none;
 }
