@@ -1,10 +1,10 @@
 import React from "react";
 
-function ListItem() {
+function ListItem(props) {
   return (
-    <label htmlFor="">
+    <label className="list-item" htmlFor="">
       <input type="checkbox" />
-      Clean room
+      {" " + props.itemDesc}
     </label>
   );
 }

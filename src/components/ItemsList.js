@@ -6,9 +6,9 @@ function ItemsList() {
     <div id="items-list">
       <h3>List of things to do:</h3>
       <div className="boxes">
-        <ListItem />
-        <ListItem />
-        <ListItem />
+        <ListItem itemDesc="Clean room" />
+        <ListItem itemDesc="Wash clothes" />
+        <ListItem itemDesc="Buy milk" />
       </div>
     </div>
   );

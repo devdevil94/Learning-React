@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MyInfo from "./components/MyInfo.js";
-import Footer from "./components/Footer.js";
-import Header from "./components/Header.js";
-import ItemsList from "./components/ItemsList.js";
+import MyInfo from "./components/MyInfo";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ItemsList from "./components/ItemsList";
 
 import "./styles.css";
 
