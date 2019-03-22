@@ -23,3 +23,7 @@ nav ul {
   justify-content: space-around;
   align-items: center;
 }
+.boxes {
+  display: flex;
+  flex-direction: column;
+}
