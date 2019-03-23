@@ -1,17 +1,23 @@
 import React from "react";
 import ListItem from "./ListItem";
+import toDoItems from "../toDoItems";
 
 function ItemsList() {
+  const itemsContainerStyle = {
+    display: "flex",
+    flexDirection: "column"
+  };
+
   return (
-    <div id="items-list">
+    <div>
       <h3>List of things to do:</h3>
-      <div className="boxes">
-        <ListItem itemDesc="Clean room" />
-        <ListItem itemDesc="Wash clothes" />
-        <ListItem itemDesc="Buy milk" />
-      </div>
+      <div style={itemsContainerStyle}>{toDoItems.map(createListItems)}</div>
     </div>
   );
+}
+
+function createListItems(item) {
+  return <ListItem item={item} />;
 }
 
 export default ItemsList;

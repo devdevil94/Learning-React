@@ -26,12 +26,3 @@ nav ul {
   justify-content: space-around;
   align-items: center;
 }
-.boxes {
-  display: flex;
-  flex-direction: column;
-}
-.list-item {
-  padding: 5px;
-  margin: 5px 0;
-  border-bottom: 2px solid #743811;
-}
