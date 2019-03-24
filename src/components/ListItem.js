@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 function ListItem(props) {
   const listItemStyle = {
@@ -12,15 +12,11 @@ function ListItem(props) {
       <input
         type="checkbox"
         checked={props.item.completed}
-        onChange={checkboxChanged}
+        onChange={event => props.handleChange(props.item.id)}
       />
       {" " + props.item.text}
     </label>
   );
-}
-
-function checkboxChanged() {
-  console.log("Changed!!!");
 }
 
 export default ListItem;
