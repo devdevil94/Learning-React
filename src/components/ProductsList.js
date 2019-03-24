@@ -12,7 +12,7 @@ function ProductsList(props) {
 }
 
 function createProductComponent(product) {
-  return <Product product={product} />;
+  return <Product key={product.id} product={product} />;
 }
 
 export default ProductsList;
