@@ -9,10 +9,18 @@ function ListItem(props) {
   };
   return (
     <label style={listItemStyle} htmlFor="">
-      <input type="checkbox" checked={props.item.completed} />
+      <input
+        type="checkbox"
+        checked={props.item.completed}
+        onChange={checkboxChanged}
+      />
       {" " + props.item.text}
     </label>
   );
+}
+
+function checkboxChanged() {
+  console.log("Changed!!!");
 }
 
 export default ListItem;

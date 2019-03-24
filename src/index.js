@@ -24,9 +24,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      answer: "yes"
+      count: 0
     };
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    console.log("i have been clicked!");
+    this.setState(prevState => {
+      return { count: prevState.count + 1 };
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -34,7 +43,10 @@ class App extends Component {
         <MyInfo />
         <ItemsList />
         <ProductsList />
-        <h1>Do you know the way? {this.state.answer}</h1>
+        <div style={{ width: "100px", height: "100px", textAlign: "center" }}>
+          <h1>{this.state.count}</h1>
+          <button onClick={this.handleClick}>Changed!</button>
+        </div>
         <Footer />
       </div>
     );
