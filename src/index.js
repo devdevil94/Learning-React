@@ -34,7 +34,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isLoading: false });
-    }, 1500);
+    }, 2500);
   }
   handleClick() {
     console.log("i have been clicked!");
@@ -54,7 +54,14 @@ class App extends Component {
           <h1>{this.state.count}</h1>
           <button onClick={this.handleClick}>Changed!</button>
         </div>
-        <Conditional isLoading={this.state.isLoading} />
+        {this.state.isLoading ? (
+          <div>
+            <h1>Hello</h1>
+          </div>
+        ) : (
+          <Conditional />
+        )}
+
         <Footer />
       </div>
     );
