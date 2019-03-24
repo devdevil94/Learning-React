@@ -10,7 +10,6 @@ class ItemsList extends Component {
   }
 
   handleChange(id) {
-    console.log("Changed!!!");
     this.setState(prevState => {
       const updatedToDoItems = prevState.toDoItems.map(item => {
         if (id === item.id) item.completed = !item.completed;

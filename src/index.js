@@ -26,15 +26,25 @@ class App extends Component {
     super();
     this.state = {
       count: 0,
-      isLoading: true
+      isLoading: true,
+      character: {}
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 2500);
+    // setTimeout(() => {
+    //   this.setState({ isLoading: false });
+    // }, 2500);
+
+    fetch("https://swapi.co/api/people/1")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.setState(prevState => {
+          return { character: data };
+        });
+      });
   }
   handleClick() {
     console.log("i have been clicked!");
@@ -53,6 +63,7 @@ class App extends Component {
         <div style={{ width: "100px", height: "100px", textAlign: "center" }}>
           <h1>{this.state.count}</h1>
           <button onClick={this.handleClick}>Changed!</button>
+          <div>{console.log(this.state.character.name)}</div>
         </div>
         {this.state.isLoading ? (
           <div>
