@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ItemsList from "./components/ItemsList";
 import Conditional from "./components/Conditional";
+import Form from "./components/Form";
 import ProductsList from "./components/ProductsList";
 
 import "./styles.css";
@@ -41,9 +42,7 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        this.setState(prevState => {
-          return { character: data };
-        });
+        this.setState({ character: data });
       });
   }
   handleClick() {
@@ -63,7 +62,7 @@ class App extends Component {
         <div style={{ width: "100px", height: "100px", textAlign: "center" }}>
           <h1>{this.state.count}</h1>
           <button onClick={this.handleClick}>Changed!</button>
-          <div>{console.log(this.state.character.name)}</div>
+          {/* <div>{this.state.character.name}</div> */}
         </div>
         {this.state.isLoading ? (
           <div>
@@ -72,7 +71,7 @@ class App extends Component {
         ) : (
           <Conditional />
         )}
-
+        <Form />
         <Footer />
       </div>
     );
