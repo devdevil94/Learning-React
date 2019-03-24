@@ -4,6 +4,7 @@ import MyInfo from "./components/MyInfo";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ItemsList from "./components/ItemsList";
+import Conditional from "./components/Conditional";
 import ProductsList from "./components/ProductsList";
 
 import "./styles.css";
@@ -24,11 +25,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      count: 0
+      count: 0,
+      isLoading: true
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 1500);
+  }
   handleClick() {
     console.log("i have been clicked!");
     this.setState(prevState => {
@@ -47,6 +54,7 @@ class App extends Component {
           <h1>{this.state.count}</h1>
           <button onClick={this.handleClick}>Changed!</button>
         </div>
+        <Conditional isLoading={this.state.isLoading} />
         <Footer />
       </div>
     );

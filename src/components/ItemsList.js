@@ -13,11 +13,10 @@ class ItemsList extends Component {
     console.log("Changed!!!");
     this.setState(prevState => {
       const updatedToDoItems = prevState.toDoItems.map(item => {
-        if (id === item.id) {
-          item.completed = !item.completed;
-        }
+        if (id === item.id) item.completed = !item.completed;
+        return item;
       });
-      return updatedToDoItems;
+      return { toDoItems: updatedToDoItems };
     });
   }
   render() {
