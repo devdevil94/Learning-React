@@ -7,8 +7,19 @@ function ListItem(props) {
     border: "2px solid #743811",
     width: "200px"
   };
+  const completedItemStyle = {
+    textDecoration: "line-through",
+    padding: "5px",
+    margin: "5px 0",
+    border: "2px solid #743811",
+    width: "200px"
+  };
+
   return (
-    <label style={listItemStyle} htmlFor="">
+    <label
+      style={props.item.completed ? completedItemStyle : listItemStyle}
+      htmlFor=""
+    >
       <input
         type="checkbox"
         checked={props.item.completed}
